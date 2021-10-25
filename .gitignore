@@ -236,6 +236,7 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/node,solidity
 
 #Hardhat files
-cache
-artifacts
+/cache
+/artifacts
 mnemonic.txt
+/deployments

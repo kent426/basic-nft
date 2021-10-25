@@ -11,6 +11,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 contract BasicNFT is ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
+
     constructor() ERC721("BasicNFT", "BNFT") {
     }
 
@@ -18,6 +19,7 @@ contract BasicNFT is ERC721URIStorage {
         public
         returns (uint256)
     {
+        require(balanceOf(msg.sender) != 0, "Can not mint more than one BNFT");
         _tokenIds.increment();
 
         uint256 newItemId = _tokenIds.current();
